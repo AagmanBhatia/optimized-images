@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Email Validation</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  #email-form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+  }
+
+  label {
+    font-size: 18px;
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+
+  button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  button:hover {
+    background-color: #0056b3;
+  }
+
+  #error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: -15px;
+    margin-bottom: 20px;
+    height: 16px; /* To maintain space for error messages */
+  }
+</style>
+</head>
+<body>
+<form id="email-form">
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email" required>
+  <p id="error-message"></p>
+  <button type="submit">Submit</button>
+</form>
+
+<script>
+document.getElementById('email-form').addEventListener('submit', function(event) {
+  event.preventDefault(); // Prevent form submission
+
+  const emailInput = document.getElementById('email');
+  const errorMessage = document.getElementById('error-message');
+  
+  // Regular expression for basic email validation
+  const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  
+  if (!emailPattern.test(emailInput.value)) {
+    errorMessage.textContent = 'Please enter a valid email address.';
+  } else {
+    errorMessage.textContent = '';
+    // Optionally, submit the form or perform further actions
+    alert('Email is valid!');
+    // You can submit the form programmatically if needed
+    // this.submit();
+  }
+});
+</script>
+</body>
+</html>
+
