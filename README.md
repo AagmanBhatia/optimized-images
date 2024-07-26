@@ -7,7 +7,7 @@ This document provides a summary of the assignments I have completed.
 ## Completed Assignments
 
 1. **Assignment 1**  
-   *Description:* Optimizing Image Loading for Mobile  
+   *Description:* Optimizing Image Loading for Mobile
    *Status:* Completed  
    *Details:* : Optimize the images for mobile devices using the srcset attribute to provide different resolutions based on the device's screen size.
 
